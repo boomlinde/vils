@@ -12,11 +12,11 @@ the file name without changing the identifying number.
 
 ## Caveats
 
-Changes are applied in the order of the original manifest, and there can only
-be one operation per file per manifest.  Therefore, you can't use `vils` to
-e.g. swap filenames within the same manifest.
+Each changed file in the manifest will be renamed, adding the suffix .vils.tmp
+before the operation is applied. This is to ensure that operations don't
+interfere with each other, for example so that you can swap filenames.
 
 ## Editor
 
-`vils` prefers using your VISUAL editor, but will fall back to EDITOR if that
-is empty or not set and finally just `vi` if neither is set.
+`vils` prefers using your $VISUAL editor, but will fall back to $EDITOR if
+that is empty or unset and finally just `vi` if neither is set.

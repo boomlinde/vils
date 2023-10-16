@@ -28,6 +28,11 @@ func main() {
 
 	for _, op := range ops {
 		fmt.Println(op.String())
+	}
+	for _, op := range ops {
+		fatal(op.AppendSuffix(".vils.tmp"))
+	}
+	for _, op := range ops {
 		fatal(op.Apply())
 	}
 }
